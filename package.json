@@ -12,9 +12,9 @@
   "scripts": {
     "dev": "npm run server & npm run build-css & npm run build-js",
     "dev-no-server": "npm run build-css & npm run build-js",
-    "build-css": "node-sass --include-path assets/src/scss/build.scss assets/css/style.css -w",
-    "build-js": "watchify assets/src/js/build.js -o assets/js/scripts.js -t ",
-    "server": "lite-server"
+    "build-css": "node-sass assets/src/scss/build.scss assets/css/style.css --output-file compressed -w",
+    "build-js": "watchify assets/src/js/build.js -o assets/js/scripts.js -t",
+    "server": "browser-sync start --proxy 'npm.test'"
   },
   "author": "",
   "license": "ISC",
